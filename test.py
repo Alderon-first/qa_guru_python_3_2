@@ -1,4 +1,5 @@
-import selene
+from selene.support.shared import browser
+from selene import be, have, command
 
 
 def test_some(open_browser):
