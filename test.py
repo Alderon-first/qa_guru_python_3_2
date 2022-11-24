@@ -7,8 +7,11 @@ def test_some(open_browser):
     browser.element('[id="search"]').should(have.text('yashaka/selene: User-oriented Web UI browser tests in Python'))
 
 
-def test_crush(open_browser):
-    browser.element('[name="q"]').should(be.blank).type('ctkty').press_enter()
-    browser.element('[id="search"]').should(have.no.text('yashaka/selene: User-oriented Web UI browser tests in Python'))
+def test_negativ(open_browser):
+    browser.element('[name="q"]').should(be.blank).type('билибердабилибердабилибердабилибердабилибердабилиберда')\
+        .press_enter()
+    browser.element('[class="card-section"]').should(have.text('По запросу '
+                                                               'билибердабилибердабилибердабилибердабилибердабилиберда '
+                                                               'ничего не найдено.'))
 
 
